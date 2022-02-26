@@ -10,22 +10,59 @@ class Task extends React.Component {
     };
   }
 
-  changeText = () => {
-    this.setState( (state, props) => ({text: document.getElementById("1").value}) );
-  }
+  // changeText = () => {
+  //   this.setState( (state, props) => ({text: document.getElementById("1").value}) );
+  // }
 
-  deleteText = () => {
-    this.setState( (state, props) => ({text: " "}) );
-    // document.getElementById("1").value = "";
-  }
+  // deleteText = () => {
+  //   this.setState( (state, props) => ({text: " "}) );
+  //   // document.getElementById("1").value = "";
+  // }
 
   render() {
     return (
       <div className="task">
         <input type="checkbox"></input>
-        <input id="1" type="text" value={this.state.text} onChange={this.changeText}></input>
-        <button onClick={this.deleteText}>Clear</button>
+        <input type="text"></input>
+        {/* <button onClick={this.deleteText}>Clear</button> */}
       </div>
+    );
+  }
+}
+
+var i = 0;
+
+class Tasks extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tasks: [<Task key={i} text="" />]
+    };
+  }
+
+  addTask = () => {
+    i++;
+    this.setState({tasks: this.state.tasks.concat([<Task key={i} text="" />])});
+  }
+
+  removeTask = () => {
+    let tempArray = [...this.state.tasks];
+    tempArray.pop();
+    this.setState({tasks: tempArray});
+  }
+
+  checkState = () => {
+    console.log(this.state.tasks);
+  }
+
+  render() {
+    return (
+      <>
+        {this.state.tasks}
+        <button onClick={this.addTask}>+</button>
+        <button onClick={this.removeTask}>-</button>
+        <button onClick={this.checkState}>Check State</button>
+      </>
     );
   }
 }
@@ -33,8 +70,7 @@ class Task extends React.Component {
 function App() {
   return (
     <div className="App">
-      <Task text="dasdas" />
-      <Task text="" />
+      <Tasks />
     </div>
   );
 }
