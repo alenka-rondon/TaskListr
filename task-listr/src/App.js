@@ -51,17 +51,12 @@ class Tasks extends React.Component {
     this.setState({tasks: tempArray});
   }
 
-  checkState = () => {
-    console.log(this.state.tasks);
-  }
-
   render() {
     return (
       <>
         {this.state.tasks}
         <button onClick={this.addTask}>+</button>
         <button onClick={this.removeTask}>-</button>
-        <button onClick={this.checkState}>Check State</button>
       </>
     );
   }
