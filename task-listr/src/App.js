@@ -22,8 +22,8 @@ class Task extends React.Component {
   render() {
     return (
       <div className="task">
-        <input type="checkbox"></input>
-        <input type="text"></input>
+        <input className="task-checkbox" type="checkbox"></input>
+        <input className="task-text" type="text"></input>
         {/* <button onClick={this.deleteText}>Clear</button> */}
       </div>
     );
