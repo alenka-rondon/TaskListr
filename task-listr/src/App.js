@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 
+
 class Task extends React.Component {
   constructor(props) {
     super(props);
@@ -55,8 +56,10 @@ class Tasks extends React.Component {
     return (
       <>
         {this.state.tasks}
+        <div className = "changeRows">
         <button onClick={this.addTask}>+</button>
         <button onClick={this.removeTask}>-</button>
+        </div>
       </>
     );
   }
