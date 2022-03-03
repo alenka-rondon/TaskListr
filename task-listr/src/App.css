@@ -2,8 +2,9 @@
 
 .App {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
+  justify-content: center;
 
 }
 
@@ -15,6 +16,16 @@
   width: 40%;
 
   margin: 8px;
+}
+
+h1 {
+  margin-bottom: 1%;
+}
+
+img {
+  height: 80px;
+  width: 150px;
+  float: left;
 }
 
 .task-text {
@@ -48,7 +59,7 @@ Button {
 }
 
 Button:hover {
-  background-color: rgb(0, 147, 180); /* Green */
+  background-color: #0093b4; /* Green */
   color: white;
 }
 
@@ -56,4 +67,13 @@ Button:hover {
   display: flex;
   flex-direction: row;
   align-self: center;
+}
+
+.TaskList {
+  display: flex;
+  flex-direction: column;
+  align-self: center; 
+  margin-left: -150px;
+  width: 1200px;
+
 }

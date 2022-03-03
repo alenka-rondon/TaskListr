@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
+import logo from './TaskListr Logo.png';
 
 
 class Task extends React.Component {
@@ -54,22 +55,29 @@ class Tasks extends React.Component {
 
   render() {
     return (
-      <>
+      <div className = "TaskList">
+       <h1>Tasks: </h1>
         {this.state.tasks}
         <div className = "changeRows">
         <button onClick={this.addTask}>+</button>
         <button onClick={this.removeTask}>-</button>
         </div>
-      </>
+      </div>
     );
   }
 }
 
 function App() {
   return (
+    <> 
+    <img src={logo} />
+
     <div className="App">
+      
       <Tasks />
     </div>
+    
+    </>
   );
 }
 
