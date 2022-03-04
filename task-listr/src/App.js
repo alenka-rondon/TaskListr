@@ -67,17 +67,46 @@ class Tasks extends React.Component {
   }
 }
 
+var buttonText = '☀️';
+
+class DarkModeToggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      buttonText: '☀️'
+    };
+  }
+
+  darkModeToggle = () => {
+    var body = document.body;
+    body.classList.toggle("dark-mode");
+
+    console.log(this.state.buttonText);
+
+    if (this.state.buttonText === '☀️') {
+      this.setState({ buttonText: '🌙'});
+    }
+    else {
+      this.setState({ buttonText: '☀️'});
+    }
+  }
+
+  render() {
+    return <button className="dark-mode-toggle" onClick={this.darkModeToggle}>{this.state.buttonText}</button>;
+  }
+}
+
 function App() {
   return (
-    <> 
-    <img src={logo} />
+    <body> 
+      <img src={logo} />
+      <DarkModeToggle />
 
-    <div className="App">
-      
-      <Tasks />
-    </div>
-    
-    </>
+      <div className="App">
+        
+        <Tasks />
+      </div>
+    </body>
   );
 }
 

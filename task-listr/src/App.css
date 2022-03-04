@@ -1,11 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito:wght@300&display=swap%27');
 
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.dark-mode img {
+  filter: invert(100%);
+}
+
+.dark-mode button {
+  filter: invert(100%);
+}
+
+.dark-mode .task-checkbox:checked {
+  filter: hue-rotate(320deg) invert(100%);
+}
+
+.dark-mode .task-text {
+  background-color: rgb(41, 41, 41);
+  color: white;
+  border-color: white;
+}
+
 .App {
   display: flex;
   flex-direction: row;
   text-align: center;
   justify-content: center;
-
 }
 
 .task {
