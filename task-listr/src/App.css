@@ -30,14 +30,28 @@
   justify-content: center;
 }
 
+.Inspo {
+  border-color: rgb(244, 127, 255);
+  border-width: 4px;
+  border-style: dotted;
+  font-family: cursive;
+  font-size: x-large;
+  width: 15%; 
+  background-image: url("images/clouds.jpeg"); 
+  backdrop-filter: brightness(90%);
+  background-position: center;
+  background-size:cover;
+}
+
 .task {
   display: flex;
+  
   flex-direction: row;
   align-self: center;
   align-items: center;
   width: 40%;
 
-  margin: 8px;
+  margin: 10px;
 }
 
 h1 {
@@ -95,7 +109,6 @@ Button:hover {
   display: flex;
   flex-direction: column;
   align-self: center; 
-  margin-left: -150px;
-  width: 1200px;
+  width: 70vw;
 
 }
