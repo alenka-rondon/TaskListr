@@ -96,6 +96,22 @@ class DarkModeToggle extends React.Component {
   }
 }
 
+var quotesDict = {
+  1: "When you have a dream, you have got to grab it and never let go.",
+  2: "We cannot solve problems with the kind 'of' thinking we employed when we came up with them.",
+  3: "Nothing is impossible. The word itself says ‘I’m possible!'",
+  4: "Success is not final; failure is not fatal: It is the courage to continue that counts.",
+  5: "It is better to fail in originality than to succeed in imitation",
+  6: "Experience is a hard teacher because she gives the test first, the lesson afterwards.",
+  7: "I never dreamed about success. I worked for it.",
+  8: "To know how much there is to know is the beginning of learning to live.",
+  9: "Don’t let yesterday take up too much of today",
+  10: "You learn more from failure than from success. Don’t let it stop you. Failure builds character.",
+};
+
+var index = Math.floor(10 * Math.random()) + 1;
+var quote = quotesDict[index];
+
 function App() {
   return (
     <body> 
@@ -103,9 +119,16 @@ function App() {
       <DarkModeToggle />
 
       <div className="App">
-        
+      <div className="check">
         <Tasks />
+        </div>
+
+        <div className = "Inspo">
+          <p> {quote} </p>
+        </div>
+
       </div>
+      
     </body>
   );
 }
